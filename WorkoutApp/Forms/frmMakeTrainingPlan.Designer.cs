@@ -38,12 +38,13 @@
             musclePart = new ColumnHeader();
             btnAddToTheTrainingDay = new Button();
             btnDeleteExerciseFromGivenDay = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblProfileName
             // 
             lblProfileName.AutoSize = true;
-            lblProfileName.Location = new Point(40, 9);
+            lblProfileName.Location = new Point(90, 9);
             lblProfileName.Name = "lblProfileName";
             lblProfileName.Size = new Size(76, 15);
             lblProfileName.TabIndex = 0;
@@ -52,7 +53,7 @@
             // cmbDayOfTheTraining
             // 
             cmbDayOfTheTraining.FormattingEnabled = true;
-            cmbDayOfTheTraining.Location = new Point(509, 50);
+            cmbDayOfTheTraining.Location = new Point(483, 50);
             cmbDayOfTheTraining.Name = "cmbDayOfTheTraining";
             cmbDayOfTheTraining.Size = new Size(199, 23);
             cmbDayOfTheTraining.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // btnCreateNewTrainingDay
             // 
-            btnCreateNewTrainingDay.Location = new Point(301, 50);
+            btnCreateNewTrainingDay.Location = new Point(286, 50);
             btnCreateNewTrainingDay.Name = "btnCreateNewTrainingDay";
             btnCreateNewTrainingDay.Size = new Size(191, 23);
             btnCreateNewTrainingDay.TabIndex = 2;
@@ -81,9 +82,9 @@
             // 
             lstExercises.Columns.AddRange(new ColumnHeader[] { ExerciseId, Name, musclePart });
             lstExercises.FullRowSelect = true;
-            lstExercises.Location = new Point(509, 105);
+            lstExercises.Location = new Point(483, 105);
             lstExercises.Name = "lstExercises";
-            lstExercises.Size = new Size(496, 576);
+            lstExercises.Size = new Size(522, 576);
             lstExercises.TabIndex = 4;
             lstExercises.UseCompatibleStateImageBehavior = false;
             lstExercises.View = View.Details;
@@ -105,29 +106,43 @@
             // 
             // btnAddToTheTrainingDay
             // 
-            btnAddToTheTrainingDay.Location = new Point(509, 703);
+            btnAddToTheTrainingDay.BackColor = SystemColors.ActiveCaptionText;
+            btnAddToTheTrainingDay.ForeColor = Color.LightGreen;
+            btnAddToTheTrainingDay.Location = new Point(509, 687);
             btnAddToTheTrainingDay.Name = "btnAddToTheTrainingDay";
-            btnAddToTheTrainingDay.Size = new Size(496, 23);
+            btnAddToTheTrainingDay.Size = new Size(496, 39);
             btnAddToTheTrainingDay.TabIndex = 5;
             btnAddToTheTrainingDay.Text = "Add exercise to the training day";
-            btnAddToTheTrainingDay.UseVisualStyleBackColor = true;
+            btnAddToTheTrainingDay.UseVisualStyleBackColor = false;
             btnAddToTheTrainingDay.Click += btnAddToTheTrainingDay_Click;
             // 
             // btnDeleteExerciseFromGivenDay
             // 
-            btnDeleteExerciseFromGivenDay.Location = new Point(40, 706);
+            btnDeleteExerciseFromGivenDay.BackColor = SystemColors.ActiveCaptionText;
+            btnDeleteExerciseFromGivenDay.ForeColor = Color.IndianRed;
+            btnDeleteExerciseFromGivenDay.Location = new Point(40, 685);
             btnDeleteExerciseFromGivenDay.Name = "btnDeleteExerciseFromGivenDay";
-            btnDeleteExerciseFromGivenDay.Size = new Size(415, 23);
+            btnDeleteExerciseFromGivenDay.Size = new Size(415, 44);
             btnDeleteExerciseFromGivenDay.TabIndex = 6;
             btnDeleteExerciseFromGivenDay.Text = "Delete exercise from a day";
-            btnDeleteExerciseFromGivenDay.UseVisualStyleBackColor = true;
+            btnDeleteExerciseFromGivenDay.UseVisualStyleBackColor = false;
             btnDeleteExerciseFromGivenDay.Click += btnDeleteExerciseFromGivenDay_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Profile:";
             // 
             // frmMakeTrainingPlan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 748);
+            Controls.Add(label1);
             Controls.Add(btnDeleteExerciseFromGivenDay);
             Controls.Add(btnAddToTheTrainingDay);
             Controls.Add(lstExercises);
@@ -136,7 +151,7 @@
             Controls.Add(cmbDayOfTheTraining);
             Controls.Add(lblProfileName);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmMakeTrainingPlan";
+            Text = "Make training plan";
             Load += frmMakeTrainingPlan_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -154,5 +169,6 @@
         private ColumnHeader musclePart;
         private Button btnAddToTheTrainingDay;
         private Button btnDeleteExerciseFromGivenDay;
+        private Label label1;
     }
 }

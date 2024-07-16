@@ -14,26 +14,13 @@ namespace WorkoutApp.Classes
 {
     public class DBAcessClass
     {
-        //public static string CheckAllProfiles()
-        //{
-        //    string profiles = "";
-
-        //    using (var connection = new SqliteConnection(LoadConnectionString()))
-        //    {
-        //        connection.Open();
-        //        var command = connection.CreateCommand();
-        //        command.CommandText =
-        //        command.CommandText= @"SELECT * FROM Profile";
-        //        using (var reader = command.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                profiles += reader.GetString(1) + "\n";
-        //            }
-        //        }
-        //    }
-        //    return profiles;
-        //}
+        /// <summary>
+        /// Use it to check if profile with specified user name and password exists
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="loggedProfile">pass referenced Profile object</param>
+        /// <returns></returns>
         public static bool IsLoginValid(string userName, string password, Profile loggedProfile)
         {
             bool isValid=false;
@@ -72,7 +59,12 @@ namespace WorkoutApp.Classes
             }
             return isValid;
         }
-
+        /// <summary>
+        /// Use this to create an account
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static bool CreateAccount(string username, string password)
         {
             bool isCreated = false;
@@ -109,7 +101,10 @@ namespace WorkoutApp.Classes
 
             return isCreated;
         }
-
+        /// <summary>
+        /// Use this method to load all of the exercises to a list, and return that list
+        /// </summary>
+        /// <returns></returns>
         public static List<Exercises> LoadExercises()
         {
             List<Exercises> exercisesList = new List<Exercises>();
@@ -139,21 +134,30 @@ namespace WorkoutApp.Classes
             }
         }
 
-        public static void SaveExercises(Exercises exercises)
-        {
-            using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
-            {
-                cnn.Execute("insert into Exercises" +
-                    " (NameOfExercise,TargetedMusclePart,LinkForVideo,CurrentReps,CurrentSets,FutureReps,CurrentWeight,FutureWeight)" +
-                    " values (@NameOfExercise,@TargetedMusclePart,@LinkForVideo,@CurrentReps,@CurrentSets,@FutureReps,@CurrentWeight,@FutureWeight)"
-                    , exercises);
-            }
-        }
+        //public static void SaveExercises(Exercises exercises)
+        //{
+        //    using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
+        //    {
+        //        cnn.Execute("insert into Exercises" +
+        //            " (NameOfExercise,TargetedMusclePart,LinkForVideo,CurrentReps,CurrentSets,FutureReps,CurrentWeight,FutureWeight)" +
+        //            " values (@NameOfExercise,@TargetedMusclePart,@LinkForVideo,@CurrentReps,@CurrentSets,@FutureReps,@CurrentWeight,@FutureWeight)"
+        //            , exercises);
+        //    }
+        //}
+
+        /// <summary>
+        /// Use it to get connection string to the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
-
+        /// <summary>
+        /// Use this to delete exercise from all exercises 
+        /// </summary>
+        /// <param name="selectedIdOfExercise"></param>
         internal static void DeleteAtSpecifiedId(int selectedIdOfExercise)
         {         
             
@@ -167,7 +171,13 @@ namespace WorkoutApp.Classes
 
             }
         }
-
+        /// <summary>
+        /// Use this to add new exercise to all exercises
+        /// </summary>
+        /// <param name="nameOfExercise"></param>
+        /// <param name="targetedMusclePart"></param>
+        /// <param name="linkForVideo"></param>
+        /// <returns></returns>
         internal static int AddNewExerciseToTotalExercises(string nameOfExercise, string targetedMusclePart, string linkForVideo)
         {
             using (SqliteConnection cnn = new SqliteConnection(LoadConnectionString()))
@@ -188,7 +198,13 @@ namespace WorkoutApp.Classes
                 }
             }
         }
-
+        /// <summary>
+        /// Use this to update values for a specified exercise in all exercises
+        /// </summary>
+        /// <param name="idOfExercise"></param>
+        /// <param name="nameOfExercise"></param>
+        /// <param name="musclePart"></param>
+        /// <param name="link"></param>
         internal static void UpdateExercise(int idOfExercise, string nameOfExercise, string musclePart, string link)
         {
 
@@ -214,7 +230,11 @@ namespace WorkoutApp.Classes
             }
 
         }
-
+        /// <summary>
+        /// Use this to retrieve distinct workout days for a given profile. (Used to populate combo box with values.)
+        /// </summary>
+        /// <param name="loggedProfileId"></param>
+        /// <returns></returns>
         public static List<int> RetrieveWorkoutNrDaysByProfile(int loggedProfileId)
         {
             string query = @"SELECT DISTINCT NrOfTheWorkoutDay
@@ -242,7 +262,11 @@ namespace WorkoutApp.Classes
             }
             return nrOfDays;
         }
-
+        /// <summary>
+        /// Check if a given day already exists in table
+        /// </summary>
+        /// <param name="biggestNrOfWorkoutDay"></param>
+        /// <returns></returns>
         public static bool CheckForExistanceOfWorkoutDay(int biggestNrOfWorkoutDay)
         {
             
@@ -265,8 +289,10 @@ namespace WorkoutApp.Classes
             
             return isTheBiggestDayFromComboBoxInDB;
         }
-
-       public static void InsertNewWorkoutDay()
+        /// <summary>
+        /// Insert new workout day (auto increment). Use this with combination of CheckForExistanceOfWorkoutDay
+        /// </summary>
+        public static void InsertNewWorkoutDay()
         {
             string query2 = "INSERT INTO WorkoutDaysTable DEFAULT VALUES;";
             using (var connection = new SqliteConnection(LoadConnectionString()))
@@ -278,7 +304,12 @@ namespace WorkoutApp.Classes
                 MessageBox.Show("Created new day in database");                
             }
         }
-
+        /// <summary>
+        /// Use this to get list of exercises from a given profile on a specified workout day
+        /// </summary>
+        /// <param name="loggedProfileId"></param>
+        /// <param name="selectedDay"></param>
+        /// <returns></returns>
          public static List<Exercises> LoadExercisesByProfileByDay(int loggedProfileId, int selectedDay)
         {
             List<Exercises> ListOfExercisesByProfileByDay = new();
@@ -329,6 +360,12 @@ namespace WorkoutApp.Classes
                     command.ExecuteNonQuery();
                 }
         }
+        /// <summary>
+        /// Use this to get an ID of exercise for a logged profile 
+        /// </summary>
+        /// <param name="loggedProfileId"></param>
+        /// <param name="selectedExerciseIdToBeAddedToProfile"></param>
+        /// <param name="idOfAddedProfileExercises"></param>
         internal static void GetIdOfExerciseInProfileExercisesTable(int loggedProfileId, int selectedExerciseIdToBeAddedToProfile, out int idOfAddedProfileExercises)
         {
             idOfAddedProfileExercises = -1;
@@ -437,7 +474,11 @@ namespace WorkoutApp.Classes
                 return false;
             
         }
-
+        /// <summary>
+        /// Use this to delete exercise from a selected workout day on a logged profile. Used with combination of GetIdOfExerciseInProfileExercisesTable
+        /// </summary>
+        /// <param name="idOfProfileExercises"></param>
+        /// <param name="selectedDay"></param>
         internal static void SelectedExerciseDeleteFromWorkoutPlanDay(int idOfProfileExercises, int selectedDay)
         {
             // it delets entry in a WorkoutPlanDay table with id and selected day attributes
@@ -481,7 +522,11 @@ namespace WorkoutApp.Classes
             }
             return idOfProfileExercises;
         }
-
+        /// <summary>
+        /// Retrieves link for an exercise
+        /// </summary>
+        /// <param name="idOfSelectedExerciseByDayByProfile"></param>
+        /// <returns></returns>
         internal static string GetLinkForVideo(int idOfSelectedExerciseByDayByProfile)
         {
             string linkForVideo = "";
@@ -503,7 +548,11 @@ namespace WorkoutApp.Classes
             }
             return linkForVideo;
         }
-
+        /// <summary>
+        /// Read values of exercise on a logged profile
+        /// </summary>
+        /// <param name="idOfSelectedExerciseByDayByProfile"></param>
+        /// <returns></returns>
         internal static Exercises ReadRepsSetsWeightNameTargetByProfileExerciseId(int idOfSelectedExerciseByDayByProfile)
         {
             Exercises exercise = new();
@@ -532,7 +581,14 @@ namespace WorkoutApp.Classes
             }
             return exercise;
         }
-
+        /// <summary>
+        /// Use this to update values for an exercise for a logged profile (reps, sets and weight)
+        /// </summary>
+        /// <param name="loggedProfileId"></param>
+        /// <param name="idOfSelectedExerciseByDayByProfile"></param>
+        /// <param name="reps"></param>
+        /// <param name="sets"></param>
+        /// <param name="weight"></param>
         internal static void UpdateGivenExerciseValuesOnLoggedProfile(int loggedProfileId, int idOfSelectedExerciseByDayByProfile, int reps, int sets, int weight)
         {
             string query = @"UPDATE ProfileExercises

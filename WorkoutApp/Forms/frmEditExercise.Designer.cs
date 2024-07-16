@@ -144,7 +144,7 @@
             KeyPreview = true;
             Name = "frmEditExercise";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmEditExercise";
+            Text = "Edit exercises";
             Load += frmEditExercise_Load;
             KeyDown += frmEditExercise_KeyDown;
             ResumeLayout(false);

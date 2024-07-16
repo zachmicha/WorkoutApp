@@ -43,7 +43,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(195, 289);
+            label1.Location = new Point(340, 515);
             label1.Name = "label1";
             label1.Size = new Size(79, 15);
             label1.TabIndex = 5;
@@ -52,7 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(214, 325);
+            label2.Location = new Point(359, 551);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
             label2.TabIndex = 6;
@@ -60,14 +60,14 @@
             // 
             // txtProfileName
             // 
-            txtProfileName.Location = new Point(280, 281);
+            txtProfileName.Location = new Point(425, 507);
             txtProfileName.Name = "txtProfileName";
             txtProfileName.Size = new Size(219, 23);
             txtProfileName.TabIndex = 0;
             // 
             // txtProfilePassword
             // 
-            txtProfilePassword.Location = new Point(280, 317);
+            txtProfilePassword.Location = new Point(425, 543);
             txtProfilePassword.Name = "txtProfilePassword";
             txtProfilePassword.Size = new Size(219, 23);
             txtProfilePassword.TabIndex = 1;
@@ -76,7 +76,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label3.Location = new Point(332, 230);
+            label3.Location = new Point(477, 456);
             label3.Name = "label3";
             label3.Size = new Size(97, 32);
             label3.TabIndex = 7;
@@ -85,38 +85,45 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(280, 22);
+            pictureBox1.Location = new Point(299, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 205);
+            pictureBox1.Size = new Size(410, 407);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(424, 355);
+            btnLogin.BackColor = SystemColors.Control;
+            btnLogin.Font = new Font("Segoe UI", 10F);
+            btnLogin.ForeColor = Color.Black;
+            btnLogin.Location = new Point(514, 581);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
+            btnLogin.Size = new Size(130, 39);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // btnCreateAccount
             // 
-            btnCreateAccount.Location = new Point(280, 355);
+            btnCreateAccount.BackColor = SystemColors.InfoText;
+            btnCreateAccount.FlatAppearance.BorderSize = 0;
+            btnCreateAccount.ForeColor = Color.YellowGreen;
+            btnCreateAccount.Location = new Point(359, 581);
             btnCreateAccount.Name = "btnCreateAccount";
-            btnCreateAccount.Size = new Size(110, 23);
+            btnCreateAccount.Size = new Size(149, 39);
             btnCreateAccount.TabIndex = 3;
             btnCreateAccount.Text = "Create account";
-            btnCreateAccount.UseVisualStyleBackColor = true;
+            btnCreateAccount.UseVisualStyleBackColor = false;
             btnCreateAccount.Click += btnCreateAccount_Click;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1073, 698);
+            ControlBox = false;
             Controls.Add(btnCreateAccount);
             Controls.Add(btnLogin);
             Controls.Add(pictureBox1);
@@ -126,9 +133,11 @@
             Controls.Add(label2);
             Controls.Add(label1);
             KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "Workout App";
             KeyDown += LoginForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

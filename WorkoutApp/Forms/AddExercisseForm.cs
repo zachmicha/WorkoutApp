@@ -48,7 +48,6 @@ namespace WorkoutApp
                 NameOfExercise, TargetedMusclePart, LinkForVideo};
 
             errorMessage += CheckForEmpty(allFields, errorMessage);
-            //errorMessage += CheckForDecimalType(decimalStrings, errorMessage);
 
             if (errorMessage != "")
             {
@@ -61,21 +60,6 @@ namespace WorkoutApp
             }
 
         }
-
-        //private string CheckForDecimalType(List<string> decimalStrings, string errorMessage)
-        //{
-        //    bool canBeDecimal=true;
-        //    foreach (var item in decimalStrings)
-        //    {
-        //        canBeDecimal= Decimal.TryParse(item,out _);
-        //    }
-        //    if (canBeDecimal==false)
-        //    {
-        //       errorMessage += "Check fields that require numbers \n";
-        //    }
-        //    return errorMessage;
-        //}
-
         private string CheckForEmpty(List<string> allFields, string errorMessage)
         {
             bool isAnyEmpty = false;

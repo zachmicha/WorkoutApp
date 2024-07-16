@@ -19,12 +19,6 @@ namespace WorkoutApp
             InitializeComponent();
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    frmAllExercises addExercisseForm = new();
-        //    addExercisseForm.ShowDialog();
-        //}
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtProfileName.Text;
@@ -60,12 +54,6 @@ namespace WorkoutApp
                 MessageBox.Show("Something went wrong");
             }
         }
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show(DBAcessClass.CheckAllProfiles());
-
-        //}
 
         private void LoginForm_KeyDown(object sender, KeyEventArgs e)
         {

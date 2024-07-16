@@ -139,7 +139,6 @@ namespace WorkoutApp
             Controls.Add(lstExercises);
             KeyPreview = true;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Ape strength";
             Load += frmAllExercises_Load;
             KeyDown += frmAllExercises_KeyDown;
             ((System.ComponentModel.ISupportInitialize)exercisesBindingSource).EndInit();

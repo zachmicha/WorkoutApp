@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pt+5EJ4dN0gMe55W6Ye5ve6feKoYhN+O7Tr79JVUkfpaTwIvY75KuKS8gd7U53TFcKasvYENiOhHqF4O42EQFg==",
+  "dgSpecHash": "kNHIEU7QvLw=",
   "success": true,
-  "projectFilePath": "F:\\C sharp projekciki\\WorkoutApp\\WorkoutApp\\WorkoutApp.csproj",
+  "projectFilePath": "F:\\kopie skonczonych projektow\\WorkoutApp\\WorkoutApp\\WorkoutApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\krwaw\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\krwaw\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.6\\microsoft.data.sqlite.core.8.0.6.nupkg.sha512",

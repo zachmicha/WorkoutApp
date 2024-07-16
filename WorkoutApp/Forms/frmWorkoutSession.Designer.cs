@@ -44,22 +44,23 @@
             lstBoxOfExercisesPerSelectedDay = new ListBox();
             lblLoggedProfile = new Label();
             btnUpdate = new Button();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)webBrowserControl).BeginInit();
             SuspendLayout();
             // 
             // cmbDayOfTheTraining
             // 
             cmbDayOfTheTraining.FormattingEnabled = true;
-            cmbDayOfTheTraining.Location = new Point(202, 27);
+            cmbDayOfTheTraining.Location = new Point(202, 47);
             cmbDayOfTheTraining.Name = "cmbDayOfTheTraining";
-            cmbDayOfTheTraining.Size = new Size(306, 23);
+            cmbDayOfTheTraining.Size = new Size(266, 23);
             cmbDayOfTheTraining.TabIndex = 0;
             cmbDayOfTheTraining.SelectedIndexChanged += cmbDayOfTheTraining_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(129, 27);
+            label1.Location = new Point(129, 47);
             label1.Name = "label1";
             label1.Size = new Size(60, 15);
             label1.TabIndex = 1;
@@ -152,9 +153,9 @@
             webBrowserControl.AllowExternalDrop = true;
             webBrowserControl.CreationProperties = null;
             webBrowserControl.DefaultBackgroundColor = Color.White;
-            webBrowserControl.Location = new Point(805, 85);
+            webBrowserControl.Location = new Point(65, 381);
             webBrowserControl.Name = "webBrowserControl";
-            webBrowserControl.Size = new Size(551, 333);
+            webBrowserControl.Size = new Size(641, 340);
             webBrowserControl.TabIndex = 12;
             webBrowserControl.ZoomFactor = 1D;
             // 
@@ -162,16 +163,16 @@
             // 
             lstBoxOfExercisesPerSelectedDay.FormattingEnabled = true;
             lstBoxOfExercisesPerSelectedDay.ItemHeight = 15;
-            lstBoxOfExercisesPerSelectedDay.Location = new Point(93, 349);
+            lstBoxOfExercisesPerSelectedDay.Location = new Point(785, 12);
             lstBoxOfExercisesPerSelectedDay.Name = "lstBoxOfExercisesPerSelectedDay";
-            lstBoxOfExercisesPerSelectedDay.Size = new Size(415, 364);
+            lstBoxOfExercisesPerSelectedDay.Size = new Size(529, 709);
             lstBoxOfExercisesPerSelectedDay.TabIndex = 13;
             lstBoxOfExercisesPerSelectedDay.SelectedIndexChanged += lstBoxOfExercisesPerSelectedDay_SelectedIndexChanged;
             // 
             // lblLoggedProfile
             // 
             lblLoggedProfile.AutoSize = true;
-            lblLoggedProfile.Location = new Point(610, 27);
+            lblLoggedProfile.Location = new Point(202, 12);
             lblLoggedProfile.Name = "lblLoggedProfile";
             lblLoggedProfile.Size = new Size(94, 15);
             lblLoggedProfile.TabIndex = 14;
@@ -179,19 +180,31 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.BackColor = SystemColors.ActiveCaptionText;
+            btnUpdate.ForeColor = Color.LightGreen;
             btnUpdate.Location = new Point(515, 111);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(138, 183);
+            btnUpdate.Size = new Size(191, 183);
             btnUpdate.TabIndex = 15;
             btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(145, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(44, 15);
+            label7.TabIndex = 16;
+            label7.Text = "Profile:";
             // 
             // frmWorkoutSession
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1389, 746);
+            Controls.Add(label7);
             Controls.Add(btnUpdate);
             Controls.Add(lblLoggedProfile);
             Controls.Add(lstBoxOfExercisesPerSelectedDay);
@@ -209,7 +222,8 @@
             Controls.Add(label1);
             Controls.Add(cmbDayOfTheTraining);
             Name = "frmWorkoutSession";
-            Text = "frmWorkoutSession";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Workout session";
             Load += frmWorkoutSession_Load;
             ((System.ComponentModel.ISupportInitialize)webBrowserControl).EndInit();
             ResumeLayout(false);
@@ -234,5 +248,6 @@
         private ListBox lstBoxOfExercisesPerSelectedDay;
         private Label lblLoggedProfile;
         private Button btnUpdate;
+        private Label label7;
     }
 }

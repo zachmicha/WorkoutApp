@@ -114,7 +114,7 @@
             KeyPreview = true;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Ape Strength";
+            Text = "Workout App";
             FormClosing += frmMain_FormClosing;
             KeyDown += frmMain_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
